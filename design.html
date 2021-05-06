@@ -556,14 +556,17 @@
       Squarespace.afterBodyLoad(Y);
     </script>
     <script>
-      const FILENAMES = []; // TODO Add fillename and assets
       const FOLDER = "design";
+      const PREFIX = "KT";
+      const NUM_OF_PICS = 22;
+
       const container = document.getElementById("slideshow");
 
-      FILENAMES.forEach((filename) => {
+      for (let i = 1; i <= NUM_OF_PICS; i++) {
+        const filename = `${PREFIX} ${i}.jpg`;
         const imageEl = htmlToElement(getImageHTML(filename, FOLDER));
         container.appendChild(imageEl);
-      });
+      }
 
       function htmlToElement(html) {
         var template = document.createElement("template");
