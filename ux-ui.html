@@ -331,122 +331,7 @@
                   <div
                     id="slideshow"
                     class="slideshow sqs-gallery-design-stacked"
-                  >
-                    <!-- Main page single photo START -->
-                    <div
-                      class="slide sqs-gallery-design-stacked-slide loaded sqs-active-slide"
-                      data-slide-id="601887d25fbc185342a5f0b8"
-                      data-slide-url="ah62mw05u2g43j86xqcvj2v3uztkrt"
-                      id="yui_3_17_2_1_1616086600641_132"
-                      data-type="image"
-                      style="opacity: 1; z-index: 889"
-                    >
-                      <img
-                        class="load-false loaded"
-                        data-src="./src/assets/UX-UI/Barclays_website.gif"
-                        data-image="./src/assets/UX-UI/Barclays_website.gif"
-                        data-image-focal-point="0.5,0.5"
-                        data-load="false"
-                        data-image-id="601887d25fbc185342a5f0b8"
-                        data-type="image"
-                        data-parent-ratio="1.8"
-                        src="./src/assets/UX-UI/Barclays_website.gif"
-                        style="
-                          font-size: 0px;
-                          left: 118.47px;
-                          top: 0px;
-                          width: 1175.06px;
-                          height: auto;
-                          position: relative;
-                        "
-                      />
-                    </div>
-                    <!-- Main page single photo END -->
-                    <div
-                      class="slide sqs-gallery-design-stacked-slide loaded sqs-active-slide"
-                      data-slide-id="601887d25fbc185342a5f0b8"
-                      data-slide-url="ah62mw05u2g43j86xqcvj2v3uztkrt"
-                      id="yui_3_17_2_1_1616086600641_132"
-                      data-type="image"
-                      style="opacity: 1; z-index: 889"
-                    >
-                      <img
-                        class="load-false loaded"
-                        data-src="./src/assets/UX-UI/Sandisk_mss_unit.jpg"
-                        data-image="./src/assets/UX-UI/Sandisk_mss_unit.jpg"
-                        data-image-focal-point="0.5,0.5"
-                        data-load="false"
-                        data-image-id="601887d25fbc185342a5f0b8"
-                        data-type="image"
-                        data-parent-ratio="1.8"
-                        src="./src/assets/UX-UI/Sandisk_mss_unit.jpg"
-                        style="
-                          font-size: 0px;
-                          left: 118.47px;
-                          top: 0px;
-                          width: 1175.06px;
-                          height: auto;
-                          position: relative;
-                        "
-                      />
-                    </div>
-                    <div
-                      class="slide sqs-gallery-design-stacked-slide loaded sqs-active-slide"
-                      data-slide-id="601887d25fbc185342a5f0b8"
-                      data-slide-url="ah62mw05u2g43j86xqcvj2v3uztkrt"
-                      id="yui_3_17_2_1_1616086600641_132"
-                      data-type="image"
-                      style="opacity: 1; z-index: 889"
-                    >
-                      <img
-                        class="load-false loaded"
-                        data-src="./src/assets/UX-UI/Spreadshirt_checkout.gif"
-                        data-image="./src/assets/UX-UI/Spreadshirt_checkout.gif"
-                        data-image-focal-point="0.5,0.5"
-                        data-load="false"
-                        data-image-id="601887d25fbc185342a5f0b8"
-                        data-type="image"
-                        data-parent-ratio="1.8"
-                        src="./src/assets/UX-UI/Spreadshirt_checkout.gif"
-                        style="
-                          font-size: 0px;
-                          left: 118.47px;
-                          top: 0px;
-                          width: 1175.06px;
-                          height: auto;
-                          position: relative;
-                        "
-                      />
-                    </div>
-                    <div
-                      class="slide sqs-gallery-design-stacked-slide loaded sqs-active-slide"
-                      data-slide-id="601887d25fbc185342a5f0b8"
-                      data-slide-url="ah62mw05u2g43j86xqcvj2v3uztkrt"
-                      id="yui_3_17_2_1_1616086600641_132"
-                      data-type="image"
-                      style="opacity: 1; z-index: 889"
-                    >
-                      <img
-                        class="load-false loaded"
-                        data-src="./src/assets/UX-UI/Spreadshirt_nav.gif"
-                        data-image="./src/assets/UX-UI/Spreadshirt_nav.gif"
-                        data-image-focal-point="0.5,0.5"
-                        data-load="false"
-                        data-image-id="601887d25fbc185342a5f0b8"
-                        data-type="image"
-                        data-parent-ratio="1.8"
-                        src="./src/assets/UX-UI/Spreadshirt_nav.gif"
-                        style="
-                          font-size: 0px;
-                          left: 118.47px;
-                          top: 0px;
-                          width: 1175.06px;
-                          height: auto;
-                          position: relative;
-                        "
-                      />
-                    </div>
-                  </div>
+                  ></div>
                   <div class="overlay-controls left-control"></div>
                   <div
                     class="overlay-controls center-control thumbnail-toggle"
@@ -677,6 +562,54 @@
     </script>
     <script>
       Squarespace.afterBodyLoad(Y);
+    </script>
+    <script>
+      const FILENAMES = []; // TODO Add fillename and assets
+      const FOLDER = "ux-ui";
+      const container = document.getElementById("slideshow");
+
+      FILENAMES.forEach((filename) => {
+        const imageEl = htmlToElement(getImageHTML(filename, FOLDER));
+        container.appendChild(imageEl);
+      });
+
+      function htmlToElement(html) {
+        var template = document.createElement("template");
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function getImageHTML(filename, folder) {
+        return `<div
+                      class="slide sqs-gallery-design-stacked-slide loaded sqs-active-slide"
+                      data-slide-id="601887d25fbc185342a5f0b8"
+                      data-slide-url="ah62mw05u2g43j86xqcvj2v3uztkrt"
+                      id="yui_3_17_2_1_1616086600641_132"
+                      data-type="image"
+                      style="opacity: 1; z-index: 889"
+                    >
+                      <img
+                        class="load-false loaded"
+                        data-src="./src/assets/${folder}/${filename}"
+                        data-image="./src/assets/${folder}/${filename}"
+                        data-image-focal-point="0.5,0.5"
+                        data-load="false"
+                        data-image-id="601887d25fbc185342a5f0b8"
+                        data-type="image"
+                        data-parent-ratio="1.8"
+                        src="./src/assets/${folder}/${filename}"
+                        style="
+                          font-size: 0px;
+                          left: 118.47px;
+                          top: 0px;
+                          width: 1175.06px;
+                          height: auto;
+                          position: relative;
+                        "
+                      />
+                    </div>`;
+      }
     </script>
     <svg
       xmlns="http://www.w3.org/2000/svg"
