@@ -579,6 +579,15 @@
       type="text/javascript"
       src="./Kasia Trilling_files/saved_resource"
     ></script>
+    <script>
+      const PW_ID = "ktpw";
+      const pw = "kt175";
+      const newURL = `${window.location.origin}/index.html`;
+      const userPw = sessionStorage.getItem(PW_ID);
+      if (!userPw || userPw !== pw) {
+        window.location = newURL;
+      }
+    </script>
     <script type="text/javascript" data-sqs-type="imageloader-bootstrapper">
       (function () {
         if (window.ImageLoader) {

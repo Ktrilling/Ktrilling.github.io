@@ -590,6 +590,15 @@
       Squarespace.afterBodyLoad(Y);
     </script>
     <script>
+      const PW_ID = "ktpw";
+      const pw = "kt175";
+      const newURL = `${window.location.origin}/index.html`;
+      const userPw = sessionStorage.getItem(PW_ID);
+      if (!userPw || userPw !== pw) {
+        window.location = newURL;
+      }
+    </script>
+    <script>
       const FOLDER = "art-direction";
       const PREFIX = "KT";
       const NUM_OF_PICS = 18;
