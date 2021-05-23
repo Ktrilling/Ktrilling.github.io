@@ -250,19 +250,19 @@
                 </li>
 
                 <li class="gallery-collection">
-                  <a href="./art-direction.html">Art direction</a>
+                  <a onclick="navigateTo('art-direction')">Art direction</a>
                 </li>
 
                 <li class="gallery-collection">
-                  <a href="./design.html">Design</a>
+                  <a onclick="navigateTo('design')">Design</a>
                 </li>
 
                 <li class="gallery-collection">
-                  <a href="./ux-ui.html">UX/UI</a>
+                  <a onclick="navigateTo('ux-ui')">UX/UI</a>
                 </li>
 
                 <li class="gallery-collection">
-                  <a href="./illustration.html">Illustration</a>
+                  <a onclick="navigateTo('illustration')">Illustration</a>
                 </li>
               </ul>
             </nav>
@@ -306,19 +306,19 @@
                   </li>
 
                   <li class="gallery-collection">
-                    <a href="./art-direction.html">Art direction</a>
+                    <a onclick="navigateTo('art-direction')">Art direction</a>
                   </li>
 
                   <li class="gallery-collection">
-                    <a href="./design.html">Design</a>
+                    <a onclick="navigateTo('design')">Design</a>
                   </li>
 
                   <li class="gallery-collection">
-                    <a href="./ux-ui.html">UX/UI</a>
+                    <a onclick="navigateTo('ux-ui')">UX/UI</a>
                   </li>
 
                   <li class="gallery-collection">
-                    <a href="./illustration.html">Illustration</a>
+                    <a onclick="navigateTo('illustration')">Illustration</a>
                   </li>
                 </ul>
               </nav>
@@ -397,6 +397,26 @@
     </script>
     <script>
       Squarespace.afterBodyLoad(Y);
+    </script>
+    <script>
+      function navigateTo(pageName) {
+        const pw = "kt175";
+        const PW_ID = "ktpw";
+        const newURL = `${window.location.origin}/${pageName}.html`;
+        if (sessionStorage.getItem(PW_ID) === pw) {
+          window.location = newURL;
+          return;
+        }
+
+        // Open modal and ask to input password;
+        const password = prompt("Please insert password");
+        if (!password || password !== pw) {
+          alert("Sorry, wrong password");
+        } else {
+          sessionStorage.setItem(PW_ID, pw);
+          window.location = newURL;
+        }
+      }
     </script>
     <svg
       xmlns="http://www.w3.org/2000/svg"
